@@ -1,5 +1,4 @@
 import pytest
-import os
 
 from main import sort_by_population, read_data
 
@@ -9,5 +8,5 @@ from main import sort_by_population, read_data
     ['data2.txt', [['spain', '400000', '66.67'], ['germany', '440000', '68.37'], ['france', '590000', '70.21']]],
 ])
 def test_sort_by_area(file_name, expected):
-    data = read_data(os.path.join("..", file_name))
+    data = read_data(file_name)
     assert sort_by_population(data) == expected
