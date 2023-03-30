@@ -1,5 +1,5 @@
-def read_data():
-    with open('data.txt', 'r') as f:
+def read_data(file_name):
+    with open(file_name, 'r') as f:
         data = [line.split(',') for line in f.read().splitlines()]
     return data
 
@@ -13,7 +13,7 @@ def sort_by_population(data):
 
 
 def main():
-    data = read_data()
+    data = read_data('data.txt')
     print(f'Sorted by area: {sort_by_area(data)}')
     print(f'Sorted by population: {sort_by_population(data)}')
 
